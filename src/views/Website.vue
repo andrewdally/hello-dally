@@ -37,20 +37,7 @@ export default {
       let slug = this.$route.params.website
       this.currentIndex = this.$sites.findIndex( el => el.slug === slug)
       this.site = this.$sites[this.currentIndex]
-    },
-    // prevSite() {
-    //   let prev =  (this.currentIndex === 0)
-    //     ? this.$sites[this.$sites.length - 1]
-    //     : this.$sites[this.currentIndex - 1]
-    //   console.log('currentIndex', this.currentIndex)
-    //   console.log('prev', prev)
-    //   return prev
-    // },
-    // nextSite() {
-    //   return (this.currentIndex === this.$sites.length - 1)
-    //     ? this.$sites[0]
-    //     : this.$sites[this.currentIndex + 1]
-    // }
+    }
   }
 }
 </script>

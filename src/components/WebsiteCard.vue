@@ -30,7 +30,7 @@ export default {
       return require("@/assets/" + path)
     },
     cursorStyle(emoji) {
-      let emojiPath = '/emojis/' + emoji
+      let emojiPath = require('@/assets/emojis/' + emoji)
       return {cursor: `url('${emojiPath}'), auto`}
     },
     setHover() {
@@ -54,16 +54,15 @@ video {
 }
 
 span {
-  padding: 10px 0;
-  display: block;
+  line-height: 30px;
 }
+
 .hover video {
   box-shadow: 0px 0px 15px 1px #C398BC;
 }
 
-.hover a {
-  border-bottom-style: solid;
+.hover span {
+  border-bottom: 1px solid #AE76A6;
   color: #AE76A6;
-  border-color: #AE76A6;
 }
 </style>
