@@ -9,6 +9,19 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+  mounted () {
+    let path = localStorage.getItem('path');
+    if(path) {
+      localStorage.removeItem('path');
+      this.$router.push(path);
+    }
+  }
+}
+</script>
+
 <style>
 html, body {
   min-height: 100vh;
