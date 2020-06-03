@@ -2,7 +2,8 @@
   // Use GitHub 404 to redirect to index.html and store path for later
   // via https://medium.com/swlh/how-to-host-your-angular-reactjs-vuejs-spa-on-github-pages-2d9ab102ac7b
 
-  const path = window.location.pathname.slice(1);
+  var path = window.location.pathname.slice(1);
+  path = path.replace('hello-dally/', '')
   localStorage.setItem('path', path);
   window.location.href='../';
 </script>
