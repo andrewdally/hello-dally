@@ -1,12 +1,16 @@
 <template>
   <div :class="hoverClass">
-    <video ref="videoRef"
+    <video
+      ref="videoRef"
       @mouseover="setHover()"
       @mouseout="unsetHover()"
       @click="click()"
       :style="cursorStyle(site.emoji)"
       >
-      <source :src="videoPath(site.screencast)" />
+      <source
+        :src="require('@/assets/' + site.screencast.path)"
+        :height="site.screencast.height"
+        :width="site.screencast.width" />
     </video>
     <router-link :to="`/websites/${site.slug}`">
       <span @mouseover="setHover()" @mouseout="unsetHover()">
@@ -26,9 +30,6 @@ export default {
     }
   },
   methods: {
-    videoPath(path) {
-      return require("@/assets/" + path)
-    },
     cursorStyle(emoji) {
       let emojiPath = require('@/assets/emojis/' + emoji)
       return {cursor: `url('${emojiPath}'), auto`}
@@ -50,6 +51,8 @@ export default {
 
 <style scoped>
 video {
+  width: 100%;
+  height: auto;
   box-shadow: 0px 0px 15px 1px #D4E8ED;
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div :if="site" class="uk-container">
+  <div v-if="site" class="uk-container">
     <h2>{{site.name}}</h2>
     <div>
       <i
@@ -7,11 +7,23 @@
         :key="tool"
         :class="`devicon-${tool}-plain`">
       </i>
+      <a v-if="site.link" class="uk-margin-left-small" target="_blank" :href="site.link">{{site.link}}</a>
     </div>
     <p>{{site.description}}</p>
-    <video uk-video="autoplay: inview" loop>
-      <source :src="require('@/assets/' + site.screencast)" />
-    </video>
+    <div v-if="$isMobile()">
+      <div v-for="n in 3" :key="n">
+        <img class="uk-margin-bottom uk-margin-top"
+          :src="require('@/assets/' + site.slug + '-'+ n +'.png')" >
+      </div>
+    </div>
+    <div v-else>
+      <video class="uk-margin-bottom" uk-video="autoplay: inview" loop>
+        <source
+          :src="require('@/assets/' + site.screencast.path)"
+          :height="site.screencast.height"
+          :width="site.screencast.width" />
+      </video>
+    </div>
   </div>
 </template>
 
@@ -34,6 +46,7 @@ export default {
   },
   methods: {
     setSite() {
+      if (!this.$sites) { return null }
       let slug = this.$route.params.website
       this.currentIndex = this.$sites.findIndex( el => el.slug === slug)
       this.site = this.$sites[this.currentIndex]
@@ -41,9 +54,20 @@ export default {
   }
 }
 </script>
+
 <style scoped>
-video {
+video, img {
   box-shadow: 0px 0px 15px 1px #D4E8ED;
+}
+h2 {
+  margin-bottom: 10px;
+}
+a {
+  line-height: 2rem;
+}
+i {
+  line-height: 2rem;
+  font-size: 20px;
 }
 p {
   text-align: justify;
