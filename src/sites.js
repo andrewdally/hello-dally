@@ -35,7 +35,7 @@ const sites = [
     },
     link: null,
     emoji: 'rainbow.png',
-    description: "I worked with one other designer to establish the initial web presence for the Atlanta instutition, King of Pops. This Rails app included a custom calendar, a live popsicle locaation map, and a bulk ordering wizard.",
+    description: "I worked with one other designer to establish the initial web presence for the Atlanta institution, King of Pops. This Rails app included a custom calendar, a live popsicle location map, and a bulk ordering wizard.",
     tools: ['rails','jquery', 'heroku']
   },
   {
@@ -46,7 +46,7 @@ const sites = [
       width: '1280',
       height: '680'
     },
-    link: null,
+    link: 'http://laurel-gitlen.herokuapp.com',
     emoji: 'painting.png',
     description: "I worked closely with designer John McCusker to build a custom Rails CMS to help the Laurel Gilten better showcase their artists and upcoming exhibitions.",
     tools: ['rails','jquery', 'heroku']
@@ -59,9 +59,9 @@ const sites = [
       width: '1280',
       height: '680'
     },
-    link: 'https://climatesmartcitiesgrenada.com',
+    link: 'https://www.climatesmartcitiesgrenada.com ',
     emoji: 'island.png',
-    description: "I built and helped design Climate Smart Cities Grenanda site to help Grenada and the Marron Institute present several climate interventions in the country. Built in Strapi and Vue.js, this app includes a custom Dropbox-like file sharing dashboard for researchers, scientists, and contractors fighting climate change in Grenada.",
+    description: "I built and helped design Climate Smart Cities Grenada site to help Grenada and the Marron Institute present several climate interventions in the country. Built in Strapi and Vue.js, this app includes a custom Dropbox-like file sharing dashboard for researchers, scientists, and contractors fighting climate change in Grenada.",
     tools: ['nodejs','vuejs', 'heroku']
   },
   {
@@ -72,7 +72,7 @@ const sites = [
       width: '1280',
       height: '680'
     },
-    link: 'https://atlasofurbanexpansion.org',  
+    link: 'http://atlasofurbanexpansion.org',
     emoji: 'map.png',
     description: "As one of two developers for the Atlas of Urban Expansion, I developed a library of Ruby scripts to automate the creation of over 1,000 interactive maps—saving the client hundreds in Mapbox hosting fees.",
     tools: ['ruby', 'laravel', 'javascript']
